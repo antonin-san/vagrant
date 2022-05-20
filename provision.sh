@@ -32,3 +32,6 @@ cd $KANJI/main
 make install
 make aliases
 make env
+
+# Pull docker images
+make pull

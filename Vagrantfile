@@ -24,6 +24,11 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
   config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 3001, host: 3001
+  config.vm.network "forwarded_port", guest: 8081, host: 8081
+  config.vm.network "forwarded_port", guest: 8083, host: 8083
+  config.vm.network "forwarded_port", guest: 9001, host: 9001
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
@@ -69,5 +74,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |shell|
     shell.privileged = false
     shell.path = "provision.sh"
+  end
+
+  config.vm.provision "start", run: "always", type: "shell" do |shell|
+    shell.privileged = false
+    shell.path = "start.sh"
   end
 end
