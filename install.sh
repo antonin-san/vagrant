@@ -2,7 +2,7 @@
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         echo "Running on Linux"
-        bash ./setup_linux.sh
+        bash ./install_linux.sh
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         echo "Running on Mac OSX"
 elif [[ "$OSTYPE" == "cygwin" ]]; then

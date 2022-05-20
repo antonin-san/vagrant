@@ -4,6 +4,11 @@
 echo "Generating ED25519 ssh key"
 ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ''
 
+# Install xclip to copy the ssh key to clipboard
+echo "Installing xclip to copy the ssh key to clipboard"
+sudo apt-get install -y xclip
+xclip -sel clip < ~/.ssh/id_ed25519.pub
+
 # Download and install the latest version of VirtualBox
 echo "Installing VirtualBox"
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
