@@ -14,7 +14,9 @@ echo "Installing VirtualBox"
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
 sudo apt-get update
-sudo apt-get install -y virtualbox-6.1 virtualbox-ext-pack 
+sudo apt-get install -y virtualbox-6.1
+echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
+sudo apt-get install -y virtualbox-ext-pack
 
 # Download and install Vagrant
 echo "Installing Vagrant"
