@@ -2,7 +2,7 @@
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         echo "Running on Linux"
-        bash ./install_linux.sh
+        curl -o- https://raw.githubusercontent.com/antonin-san/vagrant/main/install_linux.sh | bash
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         echo "Running on Mac OSX"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
